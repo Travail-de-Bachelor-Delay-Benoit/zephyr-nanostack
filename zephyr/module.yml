@@ -1,0 +1,4 @@
+name: zepyhr-nanostack
+build:
+  cmake: .
+  kconfig: Kconfig
