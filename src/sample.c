@@ -1,4 +1,4 @@
-#include "mon_module.h"
+#include "sample.h"
 
 #include <zephyr/logging/log.h>
 

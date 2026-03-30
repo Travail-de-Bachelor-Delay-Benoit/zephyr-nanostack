@@ -5,7 +5,7 @@ if(CONFIG_MON_MODULE)
   zephyr_library()
 
   # Ajouter les fichiers sources à compiler
-  zephyr_library_sources(src/mon_module.c)
+  zephyr_library_sources(src/sample.c)
 
   # Ajouter le dossier "include" aux chemins de recherche des headers
   zephyr_include_directories(include)
