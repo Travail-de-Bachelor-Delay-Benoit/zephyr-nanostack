@@ -1,5 +1,5 @@
-#ifndef MON_MODULE_H
-#define MON_MODULE_H
+#ifndef SAMPLE_H
+#define SAMPLE_H
 
 #include <zephyr/kernel.h>
 

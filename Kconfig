@@ -1,10 +1,15 @@
 menuconfig NANOSTACK
-    bool "Activer La Nanostack"
+    bool "Activer Mon Module Personnalisé"
     default n
     help
-      Activez cette option pour inclure la Nanostack
+      Activez cette option pour inclure le code de mon module personnalisé
+      dans le build de Zephyr.
 
 if NANOSTACK
 
+# Vous pouvez ajouter d'autres sous-options ici si nécessaire
+config NANOSTACK_OPTION_AVANCEE
+    bool "Activer l'option avancée"
+    default n
 
-endif # NANOSTACK
+endif # MON_MODULE
