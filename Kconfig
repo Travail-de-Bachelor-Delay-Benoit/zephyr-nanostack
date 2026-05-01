@@ -1,15 +1,15 @@
 menuconfig NANOSTACK
     bool "Activer Mon Module Personnalisé"
+    select MBEDTLS             
+    select MBEDTLS_ENTROPY_C   
     default n
     help
-      Activez cette option pour inclure le code de mon module personnalisé
-      dans le build de Zephyr.
+      Activez cette option pour inclure le code de mon module personnalisé.
 
 if NANOSTACK
 
-# Vous pouvez ajouter d'autres sous-options ici si nécessaire
 config NANOSTACK_OPTION_AVANCEE
     bool "Activer l'option avancée"
     default n
 
-endif # MON_MODULE
+endif # NANOSTACK

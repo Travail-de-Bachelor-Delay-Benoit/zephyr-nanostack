@@ -1,0 +1,1 @@
+https://docs.zephyrproject.org/latest/boards/st/stm32wb5mm_dk/doc/stm32wb5mm_dk.html

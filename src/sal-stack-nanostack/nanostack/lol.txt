@@ -1,0 +1,33 @@
+#ifndef NS_TRACE_H_
+#define NS_TRACE_H_
+
+#include <zephyr/logging/log.h>
+
+// On définit un niveau de log par défaut pour tous les fichiers qui incluent ce header
+// Si le niveau n'est pas défini dans le prj.conf, on met INF par défaut
+#ifndef CONFIG_NANOSTACK_LOG_LEVEL
+#define CONFIG_NANOSTACK_LOG_LEVEL LOG_LEVEL_INF
+#endif
+
+// L'ASTUCE : On enregistre un module de log nommé "nanostack" de manière statique.
+// Comme ce header est inclus partout, cela fournit les définitions manquantes (__log_current_const_data)
+LOG_MODULE_DECLARE(nanostack, CONFIG_NANOSTACK_LOG_LEVEL);
+
+// Redirection des macros mbed-trace vers Zephyr
+#define tr_debug(...) LOG_DBG(__VA_ARGS__)
+#define tr_info(...) LOG_INF(__VA_ARGS__)
+#define tr_warn(...) LOG_WRN(__VA_ARGS__)
+#define tr_error(...) LOG_ERR(__VA_ARGS__)
+#define tr_err(...) LOG_ERR(__VA_ARGS__)
+
+// Fonctions trace_array (souvent utilisées dans la Nanostack pour les adresses MAC)
+// On les définit en vide ou simple pour éviter les erreurs de lien
+#define trace_array(addr, len) ""
+#define trace_ipv6(addr) ""
+
+// Stubs pour l'initialisation
+#define mbed_trace_init() (void)0
+#define mbed_trace_free() (void)0
+#define mbed_trace_config_set(config) (void)0
+
+#endif /* NS_TRACE_H_ */

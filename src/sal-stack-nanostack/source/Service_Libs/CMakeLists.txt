@@ -39,7 +39,7 @@ target_sources(mbed-nanostack-sal_stack
     INTERFACE
         CCM_lib/ccm_security.c
 
-        CCM_lib/mbedOS/aes_mbedtls_adapter.c
+        $<$<NOT:$<BOOL:${ZEPHYR_BASE}>>:CCM_lib/mbedOS/aes_mbedtls_adapter.c>
 
         Neighbor_cache/neighbor_cache.c
 
